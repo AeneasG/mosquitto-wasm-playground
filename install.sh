@@ -28,7 +28,7 @@ cd $WORKDIR
 
 # clone mosquitto-wasm
 # currently we get the latest "stable" branch which is at the moment wasm_tls
-git clone ssh://git@cs-gitlab.unine.ch:2200/iiun/mosquitto-wasm.git -b wasm_tls
+git clone https://github.com/AeneasG/mosquitto-wasm.git -b wasm_tls
 
 # install wolfSSL
 ./install_wolfssl.sh
