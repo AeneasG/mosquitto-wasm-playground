@@ -17,7 +17,14 @@ All build params can be specified in the `case_1/Makefile`.
 * `WITH_ATTESTATION` and `HAVE_REMOTE_ATTESTATION`: Pass those parameters to request attestation evidence.
 * `WITH_PSK`: Pass this parameter to use preshared keys.
 
-You can build the client using
+Before building the client, make sure to have built and installed the native Mosquitto library on the client machine as the client code relies on this library. To do so, run
+
+```bash
+cd evaluation
+./build_mosquitto_native.sh
+```
+
+Now you can build the client using
 ````bash
 cd evaluation/case_1
 make clean && make
@@ -30,7 +37,14 @@ All cases in folder `case_2` are related to message latency. There are three dif
 Before building, you should specify the ``HOST_NAME`` (as in case_1):
 * `HOST_NAME`: Hostname the client it should connect to 
 
-You can build all cases once by running
+Before building the client, make sure to have built and installed the native Mosquitto library on the client machine as the client code relies on this library. To do so, run
+
+```bash
+cd evaluation
+./build_mosquitto_native.sh
+```
+
+Now you can build all cases once by running
 ````bash
 cd evaluation/case_2
 make clean && make
@@ -100,6 +114,9 @@ Case name can be freely choosen. It will be used to export your results. At runt
 Please note: The scripts will stop on their own (except for the broker process), but when it logs that it stops, it usually waits for around 15 seconds to ensure all data has been saved. So be patient...
 
 # Troubleshooting
+
+## Building a scenario
+1. Do you have Mosquitto native built and installed on the machine where the clients are running?
 
 ## Running a scenario
 1. Do you have random data setup?
